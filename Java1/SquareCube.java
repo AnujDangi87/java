@@ -1,11 +1,11 @@
-import java.util.Scanner;
+import java.util.Scanner;           //importing Scanner class.
 
 public class SquareCube{
 
-    static void generateSquareCubeTable(int n)
+    static void generateSquareCubeTable(int n)          //Method to generate Square and Cube of first n integer numbers.
     {
         int square = n*n, cube = n*n*n;
-        System.out.println("Square : "+square+", Cube : "+cube);
+        System.out.println("Integer : " + n + ", Square : " + square + ", Cube : " + cube);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -14,7 +14,7 @@ public class SquareCube{
         int n = sc.nextInt();
         sc.close();
 
-        if ( n <= 0)
+        if ( n <= 0)            //Input validation.
         {
             System.out.println("Error, value of n is less than or equal to 0. Exiting the program...");
         }

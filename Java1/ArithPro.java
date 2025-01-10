@@ -1,7 +1,7 @@
-import java.util.Scanner;
+import java.util.Scanner;       //importing Scanner class.
 
 public class ArithPro {
-    static int generateAP(int a, int d, int n)
+    static int generateAP(int a, int d, int n)          //Method to generate Arithmetic Progression of given nth term.
     {
         if ( n == 1)
         {
@@ -22,15 +22,16 @@ public class ArithPro {
         int d = sc.nextInt();
         sc.close();
 
-        if ( n <= 0)
+        if ( n <= 0)            //input validation.
         {
             System.out.println("Error, value of n is less than or equal to 0. Exiting the program...");
         }
         else
         {
-            for (int i=1;i<=n;i++)
+            System.out.print(a);
+            for (int i=2;i<=n;i++)
             {
-                System.out.print(generateAP(a, d, i)+" ");
+                System.out.print(", "+ generateAP(a, d, i));
             }
         }
 

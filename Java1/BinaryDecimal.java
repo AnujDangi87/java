@@ -1,8 +1,8 @@
-import java.util.Scanner;
+import java.util.Scanner;           //importing Scanner class.
 
 public class BinaryDecimal {
 
-    static void binaryToDecimal(long num)
+    static void binaryToDecimal(long num)           //Method to Change Binary number to Decimal.
     {
         long decimal = 0;
         long mul = 1;
@@ -14,7 +14,7 @@ public class BinaryDecimal {
         }
         System.out.println("Decimal : "+decimal);
     }
-    public static void main(String[] args)
+    public static void main(String[] args)          
     {
          Scanner sc = new Scanner(System.in);
 
