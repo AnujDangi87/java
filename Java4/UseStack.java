@@ -9,7 +9,6 @@ public class UseStack {
         
         Stack obj = new Stack(size);                //Making obj as instance of Stack class and giving int size as constructor argument.
         int choice;
-        System.out.println("Choice you choice(int).");
         
         System.out.println("1.To push(char) element.");             //Menu driven user input.
         System.out.println("2.To pop elemtent.");
@@ -18,15 +17,14 @@ public class UseStack {
         System.out.println("5.Is stack empty?");
         System.out.println("6.Is stack is full?");
         System.out.println("7.To exit the program.");
-        
+        System.out.print("Enter your choice : ");
         do
         {
-            
             choice = sc.nextInt();
 
             switch (choice) {
                 case 1:
-                    System.out.println("Enter the element to push : ");
+                    System.out.print("Enter the element to push : ");
                     char element = sc.next().charAt(0);
                     System.out.println("Pushed : "+element);
                     obj.push(element);              //Pushing element at the top+1 index of stack.
@@ -60,8 +58,11 @@ public class UseStack {
                         break;
             
                 default:
+                        System.out.println("Exiting the program....");
                     break;
             }
+            if (choice != 7)
+                System.out.print("Enter your choice : ");
 
         }while(choice != 7);
         sc.close();

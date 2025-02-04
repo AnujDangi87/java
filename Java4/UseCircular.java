@@ -9,11 +9,12 @@ public class UseCircular {
         
         CircularQueue obj = new CircularQueue(size);                //Making obj as instance of CircularQueue class.
         int choice;               
-        System.out.println("Choice you choice(int).");              //Menu driven input.
+        //Menu driven input.
         System.out.println("1.To Enqueue element.");
         System.out.println("2.To Dequeue elemtent.");
         System.out.println("3.To Display the queue element.");
         System.out.println("4.To exit the program.");
+        System.out.print("Enter your choice : ");
 
         do
         {
@@ -22,7 +23,7 @@ public class UseCircular {
 
             switch (choice) {
                 case 1:
-                    System.out.println("Enter the element to enqueue : ");  
+                    System.out.print("Enter the element to enqueue : ");  
                     int element = sc.nextInt();
                     System.out.println("Enqueued : "+element);
                     obj.enqueue(element);               //Enqueue the element.
@@ -41,8 +42,13 @@ public class UseCircular {
                     obj.display();              //Displaying the queue elements.
                     break;
             
-                default:
+                default: System.out.println("Exiting the program....");
                     break;
+            }
+
+            if (choice != 4)
+            {
+                System.out.print("Enter the choice : ");
             }
 
         }while(choice != 4);
