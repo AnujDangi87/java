@@ -1,5 +1,7 @@
 import java.util.Scanner;
 //This program contains two User menus.
+
+//Comparison between composition and aggregation is given in readme file.
 public class UseBag 
 {
     //Static Method that displays the Main Menu of the program
@@ -61,8 +63,7 @@ public class UseBag
                                 case 1:
                                         System.out.print("Enter page text : ");
                                         String text = sc.nextLine();
-                                        Page page = new Page(text);
-                                        book.addPage(page);
+                                        book.addPageText(text);
                                         break;
                                 case 2: 
                                         System.out.println("Returning to Main menu");
