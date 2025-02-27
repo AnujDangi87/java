@@ -5,7 +5,7 @@ public class Fibonacci {
     static void generateFibonacci(int n)    //Method to generate Fibaonacci by taking no of terms (n).
     {
         int a=0, b=1, c;
-        System.out.print("0, 1");          //printing first two two terms.
+        System.out.print(a + ", " + b);          //printing first two two terms.
        while(n>2)
        {
             c = a+b;                

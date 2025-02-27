@@ -4,6 +4,8 @@ public class SquareCube{
 
     static void generateSquareCubeTable(int n)          //Method to generate Square and Cube of first n integer numbers.
     {
+        if(n > 1)
+            generateSquareCubeTable(n-1);
         int square = n*n, cube = n*n*n;
         System.out.println("Integer : " + n + ", Square : " + square + ", Cube : " + cube);
     }
@@ -20,10 +22,7 @@ public class SquareCube{
         }
         else
         {
-            for (int i=1; i<=n;i++)
-            {
-                generateSquareCubeTable(i);
-            }
+            generateSquareCubeTable(n);
         }
     }
 }

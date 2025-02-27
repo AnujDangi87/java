@@ -5,10 +5,12 @@ public class ArithPro {
     {
         if ( n == 1)
         {
+            System.out.print(a + " ");
             return a;
         }
-        return generateAP(a, d, n-1) + d ;
-
+        int temp = generateAP(a, d, n-1) + d;
+        System.out.print(temp + " ");
+        return temp;
     }
     public static void main(String[] args)
     {
@@ -28,11 +30,7 @@ public class ArithPro {
         }
         else
         {
-            System.out.print(a);
-            for (int i=2;i<=n;i++)
-            {
-                System.out.print(", "+ generateAP(a, d, i));
-            }
+            generateAP(a, d, n);
         }
 
 

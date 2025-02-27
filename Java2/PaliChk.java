@@ -4,14 +4,23 @@ public class PaliChk {
 
     static void PalindromeChecker(String s)             //method to check if a given string is palindrome or not.
     {
-        String reverse = "";                    //Initializing a string variable to store reverse of given string.
         s = s.replaceAll(" ", "");              //Removing all white spaces from given string.
-        for (int i=0;i<s.length(); i++)             //Using for loop to store reverse of given string in reverse variable.
-        {
-            reverse = s.charAt(i) + reverse;                //Cancatinating char at i index of given string in reverse string at front of string.
-        }
+        s = s.toLowerCase();
 
-        if (s.equalsIgnoreCase(reverse.toLowerCase()))          //Checking if the given string and reverse string are equal or not(ignoring All case sensitve char).
+        boolean value = true;
+        int start = 0, end = s.length()-1;
+
+        while(start<end)
+        {
+            if(s.charAt(start) != s.charAt(end))
+            {
+                value = false;
+                break;
+            }
+            start++;
+            end--;
+        }
+        if (value)          //Checking if the given string and reverse string are equal or not(ignoring All case sensitve char).
         {
             System.out.println("Palindrome");
         }
@@ -27,7 +36,7 @@ public class PaliChk {
         sc.close();
 
         PalindromeChecker(string);
-        System.out.println(string);
+
     }
     
 }
