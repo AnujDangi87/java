@@ -1,14 +1,36 @@
 public class RightAngleTriangle extends Triangle
 {
-    int coor[][];
+    //Using single argument to check pythagoras theorem and then initialize ver array.
+    public RightAngleTriangle(int coordinates[][])
+    {   
+        if(pyTh(coordinates))
+        {
+            System.out.println("Given triangle is a right angel triangle");
+            for(int i=0;i<3;i++)
+            {
+                for(int j=0;j<2;j++)
+                    this.ver[i][j] = coordinates[i][j];
+            }
+        }
+        else
+        {
+            System.out.println("Not a right angle triangle, all vertices are set to '-1'");
+            for(int i=0;i<3;i++)
+            {
+                for(int j=0;j<2;j++)
+                    this.ver[i][j] = -1;
+            }
+        }
+    }
 
+    //Method that returns true if given 2D array is of right angle triangle coordinates.
     public boolean pyTh(int coord[][])
     {
         double[] arr = length(coord);
 
         for(int i=0;i<3;i++)
         {
-            if(Math.pow(arr[i%3], 2) == (Math.pow(arr[(i+1)%3], 2) + Math.pow(arr[(i+2)%3], 2)))
+            if(arr[i] != 0 &&(Math.pow(arr[i%3], 2) == (Math.pow(arr[(i+1)%3], 2) + Math.pow(arr[(i+2)%3], 2))))
             {
                 return true;
             }
@@ -16,6 +38,7 @@ public class RightAngleTriangle extends Triangle
         return false;
     }
 
+    //Method that returns arr of all length of vertices of triangle
     public double[] length(int coord[][])
     {
         double[] arr = new double[3];
@@ -26,30 +49,10 @@ public class RightAngleTriangle extends Triangle
 
         return arr;
     }
-    public RightAngleTriangle(int coord[][])
-    {
-        super(coord);
-        
-        if(pyTh(coord))
-        {
-            this.coor = coord;
-        }
-        else
-        {
-            this.coor = new int[][]{{-1,-1},{-1, -1},{-1,-1}};
-        }
-
-        System.out.println(area(coord));
-        System.out.println(super.perimeter());
-    }
-
+    
+    //Method that overrides its parent area method and uses 1/2*base*height.
     public double area(int[][] coord)
     {
-
-        if(!pyTh(coord))
-        {
-            return super.area();
-        }
         double arr[] = length(coord);
 
         int index;
@@ -69,6 +72,7 @@ public class RightAngleTriangle extends Triangle
         }
 
         return (((double)1/2)*arr[(index+1)%3]*arr[(index+2)%3]);
-
     }
+
+    //Permiter is same as in parent class.
 }

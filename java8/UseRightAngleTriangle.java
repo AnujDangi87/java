@@ -1,6 +1,7 @@
 import java.util.Scanner;
-public class UseTriangle {
 
+public class UseRightAngleTriangle 
+{
     static void displayMenu()
     {
         System.out.println("\n1.Display both area and perimeter");
@@ -17,7 +18,6 @@ public class UseTriangle {
         int[][] arr = new int[3][2];
 
         int k=0;
-
         try
         {
             for(int i=0;i<3;i++)
@@ -34,18 +34,17 @@ public class UseTriangle {
             System.out.println("Error : " + e + ".\nWrong input,only integers is allowed. Enter any key to try again");            //Error handling (input validation)
             sc.next();
         }
-        
         return arr;
     }
 
-    //Static Method for checking the useability of Triangle class.
-    static void useTriangle()
+    //Static Method for checking the useability of RightAngleTriangle class.
+    static void useRightAngleTriangle()
     {
         int choice = 0;
 
         Scanner sc = new Scanner(System.in);
 
-        Triangle tra = new Triangle(Input(sc));
+        RightAngleTriangle rat = new RightAngleTriangle(Input(sc));
         displayMenu();
 
         while(choice != 3)
@@ -63,10 +62,10 @@ public class UseTriangle {
             
             switch (choice)
             {
-                case 1: System.out.println("Area : "+tra.area() + "\nPerimeter : "+tra.perimeter());
+                case 1: System.out.println("Area : "+rat.area() + "\nPerimeter : "+rat.perimeter());
                     break;
 
-                case 2: tra = new Triangle(Input(sc));
+                case 2: rat = new RightAngleTriangle(Input(sc));
                         displayMenu();          
                         break;
 
@@ -85,6 +84,6 @@ public class UseTriangle {
         sc.close();
     }
     public static void main(String[] args) {
-        useTriangle();
+        useRightAngleTriangle();
     }
 }
