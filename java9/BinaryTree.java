@@ -2,9 +2,9 @@ public class BinaryTree
 {
     Node root;
 
-    public BinaryTree(Node root)
+    public BinaryTree()
     {
-        this.root = root;
+        this.root = null;
     }
 
     public void insert(int value)
@@ -32,5 +32,36 @@ public class BinaryTree
 
             }
         }
+    }
+
+    public void inOrderTraversal(Node n)
+    {
+        if(n == null)
+        {
+            return;
+        }
+        inOrderTraversal(n.left);
+        System.out.println(n.data);
+        inOrderTraversal(n.right);
+    }
+
+    public void preOrderTraversal(Node n)
+    {
+        if(n == null)
+        {
+            return;
+        }
+        System.out.println(n.data);
+        preOrderTraversal(n.left);
+        preOrderTraversal(n.right);
+    }
+
+    public void postOrderTraversal(Node n)
+    {
+        if(n == null)
+            return;
+        postOrderTraversal(n.left);
+        postOrderTraversal(n.right);
+        System.out.println(n.data);
     }
 }

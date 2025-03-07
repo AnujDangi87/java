@@ -1,12 +1,15 @@
 public class Triangle extends Shape
 {
+    //Instance variable to store vertices of triangle.
     private double[][] points;
 
+    //Constructor to instialize points variable.
     public Triangle(double[][] points)
     {
         this.points = points;
     }
 
+    //Method that returns area of the points.
     public double getArea()
     {
         double area = (((double)1/2)*(points[0][0]*(points[1][1] - points[2][1]) + points[1][0]*(points[2][1] - points[0][1]) + points[2][0]*(points[0][1] - points[1][1])));
@@ -16,6 +19,7 @@ public class Triangle extends Shape
         return area;
     }
 
+    //Method that returns perimeters of the points.
     public double getPerimeter()
     {
         double[] arr = length();
@@ -23,6 +27,7 @@ public class Triangle extends Shape
         return (arr[0]+arr[1]+arr[2]);
     }
 
+    //Method that returns true when given points are right angle triangle.
     public boolean isRightAngleTriangle()
     {
         double[] arr = length();
@@ -37,6 +42,7 @@ public class Triangle extends Shape
         return false;
     }
 
+    //Helper mehtod that returns the array of lenght of each side of points.
     public double[] length()
     {
         double[] arr = new double[3];
@@ -48,6 +54,7 @@ public class Triangle extends Shape
         return arr;
     }
 
+    //Method that returns true when given points is a isosceles Triangle.
     public boolean isIsoscelesTriangle()
     {
         double[] arr = length();
@@ -62,6 +69,7 @@ public class Triangle extends Shape
         return false;
     }
 
+    //Method that returns true when given points is a equilateral triangle.
     public boolean isEquilateralTriangle()
     {
         double[] arr = length();

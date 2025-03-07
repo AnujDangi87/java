@@ -11,7 +11,14 @@ public class UseShape
         System.out.print("Enter your choice : ");
     }
 
-    //Static Method for checking the useability of RightAngleTriangle class.
+    //Method that takes Shape object as argument (it uses principle of substition - polymorphism)
+    static void areaPerimeter(Shape s)
+    {
+        System.out.println("Area : "+s.getArea() + "\nPerimeter : "+s.getPerimeter());
+        return;
+    }
+
+    //Static Method for checking the useability of Shape and its inherited  classes.
     static void useShape()
     {
         int choice = 0;
@@ -57,6 +64,7 @@ public class UseShape
         sc.close();
     }
 
+    //Input mehthod for traingle that take input for traiangle class
     static double[][] inputTriangle(Scanner sc)
     {
         System.out.print("Enter initial coordinates(x1 y1 x2 y2 x3 y3(space between them)) : ");
@@ -114,8 +122,8 @@ public class UseShape
             
             switch (choice)
             {
-                case 1: System.out.println("Area : "+tra.getArea() + "\nPerimeter : "+tra.getPerimeter());
-                    break;
+                case 1: areaPerimeter(tra);
+                        break;
                 
                 case 2: System.out.println(tra.isRightAngleTriangle());
                         break;
@@ -152,6 +160,7 @@ public class UseShape
         System.out.println("4.Go back to main menu");
         System.out.print("Enter your choice : ");
     }
+    //Input mehthod for circle that take input for circle class
     static Circle inputCircle(Scanner sc)
     {
         System.out.print("Enter radius of Circle : ");
@@ -186,8 +195,8 @@ public class UseShape
             
             switch (choice)
             {
-                case 1: System.out.println("Area : "+circle.getArea() + "\nPerimeter : "+circle.getPerimeter());
-                    break;
+                case 1: areaPerimeter(circle);
+                        break;
 
                 case 2: System.out.print("Enter x coordinate of point : ");
                         double x = sc.nextDouble();
@@ -229,13 +238,14 @@ public class UseShape
         System.out.println("5.Go back to main menu");
         System.out.print("Enter your choice : ");
     }
+    //Input mehthod for paralleleogram that take input for paralleleogram class
     static Parallelogram inputParallelogram(Scanner sc)
     {
         System.out.print("Enter length of side 1 : ");
         double s1 =  sc.nextDouble();
         System.out.print("Enter length of side 2: ");
         double s2 = sc.nextDouble();
-        System.out.print("Enter angle :  ");
+        System.out.print("Enter angle (in degree):  ");
         Parallelogram p = new Parallelogram(s1, s2, sc.nextDouble());
 
         return p;
@@ -263,7 +273,7 @@ public class UseShape
             
             switch (choice)
             {
-                case 1: System.out.println("Area : "+parallelogram.getArea() + "\nPerimeter : "+parallelogram.getPerimeter());
+                case 1: areaPerimeter(parallelogram);
                         break;
 
                 case 2: if(parallelogram.isRectangle())
@@ -304,7 +314,7 @@ public class UseShape
         }
     }
     public static void main(String[] args) {
-        useShape();
+        useShape();             //Main method to check Shape class.
     }
 }
 
