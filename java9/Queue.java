@@ -1,7 +1,7 @@
 public class Queue 
 {
-    Node front;                 //Instance Node variable front to point at the fornt of the queue list from where node is delted.
-    Node rear;                  //Instance Node variable rear to point at the rear at the queue list at where new node is created.
+    NodeQueue front;                 //Instance Node variable front to point at the fornt of the queue list from where node is delted.
+    NodeQueue rear;                  //Instance Node variable rear to point at the rear at the queue list at where new node is created.
 
     //Constructor that set front and rear as null.
     public Queue()
@@ -14,39 +14,39 @@ public class Queue
     {
         if(front == null)
         {
-            rear = n;
+            rear = new NodeQueue(n);
             front = rear;
         }
         else
         {
-            rear.left = n;
-            rear = rear.left;
+            rear.next = new NodeQueue(n);
+            rear = rear.next;
         }
     }
 
     //Method that returns the deleted node data.
-    public int dequeue()
+    public Node dequeue()
     {
         if(isEmpty())
-            return -1;
+            return null;
 
-        int temp;
+        Node temp;
         temp = front.data;
-        if(front.left == null)
+        if(front.next == null)
         {
             front = rear = null;
         }
         else
-            front = front.left;
+            front = front.next;
 
         return temp;
     }
 
     //Method that returns the front node data.
-    public int peek()
+    public Node peek()
     {
         if (isEmpty())
-            return -1;
+            return null;
 
         return front.data;
     }
@@ -70,20 +70,40 @@ public class Queue
             return;
         }
 
-        Node temp = front;
+        NodeQueue temp = front;
 
         System.out.print("Queue : ");
         while(temp != null)
         {
-            if (temp.left != null)
+            if (temp.next != null)
             {
                 System.out.print(temp.data + " -> ");
             }
             else
                 System.out.print(temp.data);
             
-            temp = temp.left;
+            temp = temp.next;
         }
         System.out.println("");
+    }
+
+    private class NodeQueue
+    {
+        public Node data;                //Instance int variable data that stores data for that particular node.
+        public NodeQueue next;
+
+        //Constructor that takes int d as argument and set data to d and left to null.
+        public NodeQueue(Node d)
+        {
+            data = d;
+            next = null;
+        }
+
+        //Constructor that set data to d argument and Node left to Node n.
+        public NodeQueue(Node d, NodeQueue n)
+        {
+            data = d;
+            next = n;
+        }
     }
 }
