@@ -116,6 +116,7 @@ public class BinaryTree
                 parentQueue.enqueue(curr);
             }
         
+        }
 
          // Replace target's value with the last node's value
          target.data = lastNode.data;

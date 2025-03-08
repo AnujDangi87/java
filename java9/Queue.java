@@ -98,12 +98,5 @@ public class Queue
             data = d;
             next = null;
         }
-
-        //Constructor that set data to d argument and Node left to Node n.
-        public NodeQueue(Node d, NodeQueue n)
-        {
-            data = d;
-            next = n;
-        }
     }
 }
