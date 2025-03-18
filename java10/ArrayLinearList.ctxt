@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=ArrayLinearList
+comment1.params=
+comment1.target=ArrayLinearList()
+comment2.params=n\ ar
+comment2.target=ArrayLinearList(int,\ int[])
+comment3.params=
+comment3.target=boolean\ isEmpty()
+comment4.params=
+comment4.target=int\ size()
+comment5.params=index
+comment5.target=int\ get(int)
+comment6.params=theElement
+comment6.target=int\ indexOf(int)
+comment7.params=index
+comment7.target=int\ remove(int)
+comment8.params=index\ theElement
+comment8.target=void\ add(int,\ int)
+comment9.params=
+comment9.target=java.lang.String\ toString()
+numComments=10

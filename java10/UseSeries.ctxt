@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=UseSeries
+comment1.params=a\ howmany
+comment1.target=void\ printSeries(Series,\ int)
+comment2.params=
+comment2.target=void\ mainMenu()
+comment3.params=sc
+comment3.target=int[]\ seriesInput(java.util.Scanner)
+comment4.params=
+comment4.target=void\ useFiniteSeries()
+comment5.params=args
+comment5.target=void\ main(java.lang.String[])
+numComments=6

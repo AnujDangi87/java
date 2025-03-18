@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=FiniteSeries
+comment0.text=\n\ Write\ a\ description\ of\ class\ FiniteSeries\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=arr
+comment1.target=FiniteSeries(int[])
+comment2.params=
+comment2.target=int\ getNext()
+comment3.params=
+comment3.target=void\ reset()
+comment4.params=i
+comment4.target=void\ setStart(int)
+numComments=5

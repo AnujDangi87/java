@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=UseStack
+comment1.params=
+comment1.target=void\ mainMenu()
+comment2.params=arr\ index
+comment2.target=void\ get(ArrayLinearList,\ int)
+comment3.params=arr\ index
+comment3.target=void\ remove(ArrayLinearList,\ int)
+comment4.params=arr\ element
+comment4.target=void\ indexOf(ArrayLinearList,\ int)
+comment5.params=sc
+comment5.target=int[]\ stackInput(java.util.Scanner)
+comment6.params=
+comment6.target=void\ useStack()
+comment7.params=args
+comment7.target=void\ main(java.lang.String[])
+numComments=8
