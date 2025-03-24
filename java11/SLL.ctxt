@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=SLL
+comment1.params=
+comment1.target=SLL()
+comment10.params=
+comment10.target=void\ display()
+comment2.params=sll
+comment2.target=SLL(SLL)
+comment3.params=
+comment3.target=java.lang.String\ toString()
+comment4.params=obj
+comment4.target=boolean\ equals(java.lang.Object)
+comment5.params=d
+comment5.target=void\ insertAtBegin(int)
+comment6.params=
+comment6.target=int\ deleteAtBegin()
+comment7.params=d
+comment7.target=void\ insertAtEnd(int)
+comment8.params=d
+comment8.target=void\ deleteByValue(int)
+comment9.params=
+comment9.target=int\ getSum()
+numComments=11

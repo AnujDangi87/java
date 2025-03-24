@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=UseStudent
+comment1.params=
+comment1.target=void\ mainMenu()
+comment2.params=
+comment2.target=void\ useStudent()
+comment3.params=
+comment3.target=void\ displayMenu()
+comment4.params=sc
+comment4.target=Student\ createStudent(java.util.Scanner)
+comment5.params=s\ sc
+comment5.target=Student\ studentMenu(Student,\ java.util.Scanner)
+comment6.params=
+comment6.target=void\ main()
+numComments=7

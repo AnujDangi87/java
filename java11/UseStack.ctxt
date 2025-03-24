@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=UseStack
+comment1.params=
+comment1.target=void\ mainMenu()
+comment2.params=obj1\ obj2\ obj3
+comment2.target=void\ useEquals(java.lang.Object,\ java.lang.Object,\ java.lang.Object)
+comment3.params=sc
+comment3.target=int[]\ stackInput(java.util.Scanner)
+comment4.params=
+comment4.target=void\ useArrayStack()
+comment5.params=args
+comment5.target=void\ main(java.lang.String[])
+numComments=6

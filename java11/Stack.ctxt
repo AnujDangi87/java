@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=Stack
+comment1.params=arr
+comment1.target=Stack(int[])
+comment10.params=
+comment10.target=int\ peek()
+comment2.params=
+comment2.target=java.lang.String\ toString()
+comment3.params=other
+comment3.target=boolean\ equals(java.lang.Object)
+comment4.params=index
+comment4.target=int\ get(int)
+comment5.params=index
+comment5.target=int\ remove(int)
+comment6.params=index\ theElement
+comment6.target=void\ add(int,\ int)
+comment7.params=theElement
+comment7.target=int\ indexOf(int)
+comment8.params=item
+comment8.target=void\ push(int)
+comment9.params=
+comment9.target=int\ pop()
+numComments=11

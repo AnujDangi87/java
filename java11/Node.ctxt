@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Node
+comment1.params=d
+comment1.target=Node(int)
+comment2.params=d\ n
+comment2.target=Node(int,\ Node)
+comment3.params=n
+comment3.target=void\ setNext(Node)
+numComments=4
