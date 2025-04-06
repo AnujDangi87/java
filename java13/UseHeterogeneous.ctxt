@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=UseHeterogeneous
+comment1.params=
+comment1.target=void\ mainMenu()
+comment2.params=sc
+comment2.target=Student\ createStudent(java.util.Scanner)
+comment3.params=sc
+comment3.target=int\ createInt(java.util.Scanner)
+comment4.params=sc
+comment4.target=java.lang.String\ createString(java.util.Scanner)
+comment5.params=
+comment5.target=void\ inputMenu()
+comment6.params=sc\ hStack
+comment6.target=void\ createObject(java.util.Scanner,\ HeterogeneousStack)
+comment7.params=
+comment7.target=void\ useHeterogeneousStack()
+comment8.params=args
+comment8.target=void\ main(java.lang.String[])
+numComments=9

@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Student
+comment1.params=name\ id\ regno\ marks
+comment1.target=Student(java.lang.String,\ int,\ java.lang.String,\ int[])
+comment2.params=
+comment2.target=java.lang.String\ toString()
+comment3.params=obj
+comment3.target=boolean\ equals(java.lang.Object)
+comment4.params=
+comment4.target=int\ hashCode()
+comment5.params=
+comment5.target=java.lang.String[]\ grades()
+comment5.text=@Override\r\n\ \ \ \ //Correct\ hashCode()\ Method\r\n\ \ \ \ public\ int\ hashCode()\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ String[]\ grades\ \=\ grades();\r\n\ \ \ \ \ \ \ \ int\ hashCode\ \=\ 0;\r\n\ \ \ \ \ \ \ \ int\ power\ \=\ 1;\r\n\ \ \ \ \ \ \ \ int\ strToInt\ \=\ 0;\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ for(int\ i\=0;i<grades.length;i++)\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ switch(grades[i])\r\n\ \ \ \ \ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ case\ "A+"\:\ hashCode\ +\=\ power*1;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ power\ *\=\ 10;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ break;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ case\ "A"\:\ hashCode\ +\=\ power*2;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ power\ *\=\ 10;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ break;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ case\ "B+"\:\ hashCode\ +\=\ power*3;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ power\ *\=\ 10;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ break;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ case\ "B"\:\ hashCode\ +\=\ power*4;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ power\ *\=\ 10;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ break;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ case\ "C"\:\ hashCode\ +\=\ power*5;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ power\ *\=\ 10;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ break;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ case\ "D"\:\ hashCode\ +\=\ power*6;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ power\ *\=\ 10;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ break;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ case\ "F"\:\ hashCode\ +\=\ power*7;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ power\ *\=\ 10;\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ break;\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ for(int\ i\=0;i<regno.length();i++)\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ strToInt\ +\=\ ((int)regno.charAt(i));\r\n\ \ \ \ \ \ \ \ \ \ \ \ power\ *\=\ power;\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ return\ (hashCode+strToInt);\r\n}
+numComments=6
