@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=SLL
+comment1.params=
+comment1.target=SLL()
+comment2.params=data\ pos
+comment2.target=void\ insertAt(java.lang.Object,\ int)
+comment3.params=d
+comment3.target=void\ delete(java.lang.Object)
+comment4.params=
+comment4.target=void\ display()
+numComments=5
