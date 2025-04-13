@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Resume
+comment1.params=collegeId\ name\ age\ phoneNo\ skills\ about
+comment1.target=Resume(java.lang.String,\ java.lang.String,\ int,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ toString()
+comment3.params=
+comment3.target=java.lang.String\ getId()
+comment4.params=
+comment4.target=java.lang.String\ getName()
+comment5.params=job
+comment5.target=void\ addJob(Job)
+comment6.params=
+comment6.target=java.util.ArrayList\ getJobs()
+comment7.params=job
+comment7.target=void\ addJGotJobOffer(Job)
+comment8.params=
+comment8.target=java.util.ArrayList\ getGotJobOffer()
+numComments=9

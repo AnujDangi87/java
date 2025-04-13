@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=StudentAlumni
+comment1.params=
+comment1.target=void\ userMenu()
+comment2.params=sc
+comment2.target=int\ useStudentAlumni(java.util.Scanner)
+comment3.params=sc\ userId
+comment3.target=void\ createUser(java.util.Scanner,\ java.lang.String)
+comment4.params=sc
+comment4.target=void\ applyJobs(java.util.Scanner)
+comment5.params=
+comment5.target=void\ displayJobs()
+comment6.params=userId
+comment6.target=void\ displayAppliedJobs(java.lang.String)
+numComments=7

@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=RecruiterDataStore
+comment1.params=recruiterId
+comment1.target=void\ addRecruiter(java.lang.String)
+comment2.params=recruiterId\ job
+comment2.target=void\ addJob(java.lang.String,\ Job)
+comment3.params=
+comment3.target=java.util.HashMap\ allJobs()
+comment4.params=recruiterId
+comment4.target=java.util.ArrayList\ getJobs(java.lang.String)
+numComments=5
