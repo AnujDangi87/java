@@ -26,7 +26,7 @@ public class Job
     {
         String output = "";
 
-        output += "Job Id : " + jobId + "\nJob title : " + title + "\nAvailable Positions : " + positionAvailable + "\nJob Requirments : " + requirments + "\nAbout Job : " + about + "\nAbout recruiter : " + aboutRecruiters;
+        output += "Job Id : " + jobId + "\n   Job title : " + title + "\n   Available Positions : " + positionAvailable + "\n   Job Requirments : " + requirments + "\n   About Job : " + about + "\n   About recruiter : " + aboutRecruiters;
 
         return output;
     }

@@ -10,13 +10,12 @@ public class StudentAlumni
        System.out.println("\n1.Display and apply for Jobs");
        System.out.println("2.Display applied jobs/see job update");
        System.out.println("3.Go back to Main Menu");
-       System.out.println("4.Exit the program");
        System.out.print("Enter your choice : ");
    }
    
-   public static int useStudentAlumni(Scanner sc)
+   public static void useStudentAlumni(Scanner sc)
    {
-       System.out.print("Please enter your College Id : ");
+       System.out.print("\nPlease enter your College Id : ");
        userId = sc.nextLine();
            
        if(userData.getResume(userId) == null)
@@ -30,7 +29,7 @@ public class StudentAlumni
        System.out.println("\nWelcome " + userData.getResume(userId).getName());
        
        int choice = 0;
-       while(choice != 3 && choice != 4)
+       while(choice != 3)
        {
            userMenu();
            try
@@ -53,12 +52,11 @@ public class StudentAlumni
                        }
                        break;
                case 3: System.out.println("Going back to main menu....");
-                       return 1;
-               case 4: System.out.println("Exiting the program....");
-                       return 0;
+                       break;
+               default: System.out.println("Error, wrong input Try agian");
+                        break;
            }
        }
-       return 0;
    }
    
    public static void createUser(Scanner sc,String userId)
@@ -89,8 +87,36 @@ public class StudentAlumni
             }
         }
         
-        System.out.print("Enter phone number : ");
-        phoneNo = sc.nextLine();
+        boolean value = true;
+        phoneNo = "null";
+        while(value)
+        {
+            System.out.print("Enter phone number : ");
+            phoneNo = sc.nextLine();
+            
+            if(phoneNo.length() == 10)
+            {
+                if(phoneNo.charAt(0) != '0')
+                {
+                    for(int i=0;i<phoneNo.length()-1;i++)
+                    {
+                        value = true;
+                        if(phoneNo.charAt(i+1) >= 48 && phoneNo.charAt(i+1) < 58)
+                            value = false;
+                    }
+                    if(value == true)
+                        System.out.println("Error, phone number should only contain digits");
+                }
+                else{
+                    System.out.println("Error, phone number first digit should not be zero");
+                }
+            }
+            else
+            {
+                System.out.println("Error, phone number must be of ten digits");
+            }
+            
+        }
         
         System.out.print("Your skills : ");
         skills = sc.nextLine();
@@ -104,7 +130,7 @@ public class StudentAlumni
    
    public static void applyJobs(Scanner sc, HashMap<String, ArrayList<Job>> jobData)
    {
-        System.out.print("\nEnter Job number : ");
+        System.out.print("\nEnter Job number(enter -1 if none) : ");
         int choice;
         while(true)
         {
@@ -119,6 +145,11 @@ public class StudentAlumni
                 System.out.print("Enter Job number : ");
                 sc.next();
             }
+        }
+        
+        if(choice == -1)
+        {
+            return;
         }
         
         int k=1;
@@ -158,7 +189,6 @@ public class StudentAlumni
            for(int i=0;i<jobs.size();i++)
            {
                System.out.println((k++)+". " + jobs.get(i));
-               System.out.print("   ");
            }
         }
        
@@ -175,16 +205,17 @@ public class StudentAlumni
             return false;
         }
        
+       System.out.println("");
        for(int i=0;i<appliedJobs.size();i++)
        {
-           System.out.println((i+1)+" " + appliedJobs.get(i));
+           System.out.println((i+1)+". " + appliedJobs.get(i));
            if( gotJobOffer.contains(appliedJobs.get(i)))
            {
-               System.out.println("Got Job Offer : Yes");
+               System.out.println("   Got Job Offer : Yes");
            }
            else
            {
-               System.out.println("Got Job Offer : No");
+               System.out.println("   Got Job Offer : No");
            }
            System.out.println();
        }

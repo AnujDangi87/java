@@ -16,6 +16,11 @@ public class RecruiterDataStore
         temp.add(job);
     }
     
+    public boolean containsRecruiter(String recruiterId)
+    {
+        return dataStore.containsKey(recruiterId);
+    }
+    
     public static HashMap<String, ArrayList<Job>> allJobs()
     {
         return dataStore;

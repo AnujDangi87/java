@@ -51,6 +51,7 @@ public class UOHCarrerPlatform
                 System.out.println("");
             }
         }
+        sc.close();
     }
     
     public static void main(String[] args)

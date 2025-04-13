@@ -11,5 +11,5 @@ comment4.target=Job\ addJob(java.util.Scanner,\ java.lang.String)
 comment5.params=sc\ recruiterId
 comment5.target=void\ selectJob(java.util.Scanner,\ java.lang.String)
 comment6.params=recruiterId
-comment6.target=void\ displayJobs(java.lang.String)
+comment6.target=boolean\ displayJobs(java.lang.String)
 numComments=7

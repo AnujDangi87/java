@@ -27,7 +27,7 @@ public class Resume
     {
         String output = "";
         
-        output += "College ID : " + collegeId + "\nName : " + name + "\nAge : " + age + "\nPhone Number : " + phoneNo + "\nSkills : " + skills + "\nAbout : " + about;
+        output += "College ID : " + collegeId + "\n   Name : " + name + "\n   Age : " + age + "\n   Phone Number : " + phoneNo + "\n   Skills : " + skills + "\n   About : " + about;
         
         return output;
     }
