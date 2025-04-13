@@ -52,7 +52,7 @@ public class Resume
         return jobs;
     }
     
-    public void addJGotJobOffer(Job job)
+    public void addGotJobOffer(Job job)
     {
         gotJobOffer.add(job);
     }

@@ -130,7 +130,7 @@ public class Recruiter
        ArrayList<Resume> applicants = job.getApplicants();
        
        if(applicants.size() == 0)
-           System.out.println("<--No applicants-->");
+           System.out.println("<--No applicants for specified job-->\n");
         else
         {
             for(int i=0;i<applicants.size();i++)
@@ -142,10 +142,15 @@ public class Recruiter
            System.out.println("");
            for(int i=0;i<job.getPositionAvailable();i++)
            {
-               System.out.print("Enter "+(i+1) +"st Applicant number : ");
+               System.out.print("Enter "+(i+1) +"st Applicant number(enter -1 if none) : ");
                int resumeChoice = sc.nextInt();
                sc.nextLine();
+               if(resumeChoice == -1)
+               {
+                   break;
+               }
                job.addSelectedApplicants(applicants.get(resumeChoice-1));
+               applicants.get(resumeChoice-1).addGotJobOffer(job);
                
            }
         }

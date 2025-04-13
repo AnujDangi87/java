@@ -3,11 +3,12 @@ import java.util.*;
 public class StudentAlumni
 {
    static StudentAlumniDataStore userData = new StudentAlumniDataStore();
+   static String userId;
    
    public static void userMenu()
    {
-       System.out.println("1.Display and apply for Jobs");
-       System.out.println("2.Display applied jobs");
+       System.out.println("\n1.Display and apply for Jobs");
+       System.out.println("2.Display applied jobs/see job update");
        System.out.println("3.Go back to Main Menu");
        System.out.println("4.Exit the program");
        System.out.print("Enter your choice : ");
@@ -16,20 +17,22 @@ public class StudentAlumni
    public static int useStudentAlumni(Scanner sc)
    {
        System.out.print("Please enter your College Id : ");
-       String userId = sc.nextLine();
+       userId = sc.nextLine();
            
        if(userData.getResume(userId) == null)
        {
+           System.out.println("");
            System.out.println("First time user Creating Resume-->");
            createUser(sc, userId);
            
        }
        
-       System.out.println("Welcome " + userData.getResume(userId).getName());
+       System.out.println("\nWelcome " + userData.getResume(userId).getName());
        
        int choice = 0;
        while(choice != 3 && choice != 4)
        {
+           userMenu();
            try
             {
                 choice = sc.nextInt();
@@ -42,9 +45,12 @@ public class StudentAlumni
             
            switch(choice)
            {
-               case 1: applyJobs(sc);
+               case 1: displayJobs(sc);
                        break;
-               case 2: displayAppliedJobs(userId);
+               case 2: if(!displayAppliedJobs())
+                       {
+                           System.out.println("\n<--No applied Jobs right now-->");
+                       }
                        break;
                case 3: System.out.println("Going back to main menu....");
                        return 1;
@@ -72,6 +78,7 @@ public class StudentAlumni
             if(sc.hasNextInt())
             {
                 age = sc.nextInt();
+                sc.nextLine();
                 break;
             }
             else
@@ -95,13 +102,11 @@ public class StudentAlumni
         userData.addResume(resume);
    }
    
-   public static void applyJobs(Scanner sc)
+   public static void applyJobs(Scanner sc, HashMap<String, ArrayList<Job>> jobData)
    {
-       displayJobs();
-       
-       System.out.print("\nEnter Job number : ");
-       int choice;
-       while(true)
+        System.out.print("\nEnter Job number : ");
+        int choice;
+        while(true)
         {
             if(sc.hasNextInt())
             {
@@ -116,12 +121,36 @@ public class StudentAlumni
             }
         }
         
-        
-   }
+        int k=1;
+       for(int j=1;j<=jobData.size();j++){
+           ArrayList<Job> jobs = jobData.get("RE"+j);
+           
+           for(int i=0;i<jobs.size();i++)
+           {
+               if(k == choice)
+               {
+                   Resume resume = userData.getResume(userId);
+                   
+                   resume.addJob(jobs.get(i));
+                   jobs.get(i).addApplicants(resume);
+                   
+                   System.out.println("<--Request sent successfully-->");
+                   return;
+               }
+               k++;
+           }
+        }
+    }
    
-   public static void displayJobs()
+   public static void displayJobs(Scanner sc)
    {
        HashMap<String, ArrayList<Job>> jobData = RecruiterDataStore.allJobs();
+       
+       if(jobData.size() == 0)
+       {
+           System.out.println("\n<--Sorry, there is no jobs right now-->");
+           return;
+       }
        int k=1;
        for(int j=1;j<=jobData.size();j++){
            ArrayList<Job> jobs = jobData.get("RE"+j);
@@ -131,14 +160,20 @@ public class StudentAlumni
                System.out.println((k++)+". " + jobs.get(i));
                System.out.print("   ");
            }
-        };
+        }
        
+        applyJobs(sc, jobData);
    }
    
-   public static void displayAppliedJobs(String userId)
+   public static boolean displayAppliedJobs()
    {
        ArrayList<Job> appliedJobs = userData.getResume(userId).getJobs();
        ArrayList<Job> gotJobOffer = userData.getResume(userId).getGotJobOffer();
+       
+       if(appliedJobs.size() == 0)
+        {
+            return false;
+        }
        
        for(int i=0;i<appliedJobs.size();i++)
        {
@@ -153,5 +188,7 @@ public class StudentAlumni
            }
            System.out.println();
        }
+       
+       return true;
    }
 }
