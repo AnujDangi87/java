@@ -2,10 +2,17 @@ import java.util.*;
 
 public class StudentAlumni
 {
-   static StudentAlumniDataStore userData = new StudentAlumniDataStore();
-   static String userId;
+   private StudentAlumniDataStore userData;     //Instance StudentAlumniDataStore variable to Store Student/Alumni data
+   private String userId;           //Instance variable to store current Student/Alumni using program.
    
-   public static void userMenu()
+   //Constructor that allocate memory to userData variable.
+   public StudentAlumni()
+   {
+       userData = new StudentAlumniDataStore();
+   }
+   
+   //Method that display user Menu for Student/Alumni
+   public void userMenu()
    {
        System.out.println("\n1.Display and apply for Jobs");
        System.out.println("2.Display applied jobs/see job update");
@@ -13,16 +20,17 @@ public class StudentAlumni
        System.out.print("Enter your choice : ");
    }
    
-   public static void useStudentAlumni(Scanner sc)
+   //Method that perfoms Student/Alumni program
+   public void useStudentAlumni(Scanner sc)
    {
        System.out.print("\nPlease enter your College Id : ");
        userId = sc.nextLine();
            
-       if(userData.getResume(userId) == null)
+       if(userData.getResume(userId) == null)       //Checking if currentUser has before used this program or not
        {
            System.out.println("");
            System.out.println("First time user Creating Resume-->");
-           createUser(sc, userId);
+           createUser(sc);
            
        }
        
@@ -31,8 +39,9 @@ public class StudentAlumni
        int choice = 0;
        while(choice != 3)
        {
+           //Displaying userMenu
            userMenu();
-           try
+           try          //Input vaidation
             {
                 choice = sc.nextInt();
             }
@@ -44,9 +53,9 @@ public class StudentAlumni
             
            switch(choice)
            {
-               case 1: displayJobs(sc);
+               case 1: displayJobs(sc);     //Displays the job to apply
                        break;
-               case 2: if(!displayAppliedJobs())
+               case 2: if(!displayAppliedJobs())        //Display the applied jobs with its status
                        {
                            System.out.println("\n<--No applied Jobs right now-->");
                        }
@@ -59,7 +68,8 @@ public class StudentAlumni
        }
    }
    
-   public static void createUser(Scanner sc,String userId)
+   //Create Student/Alumni resume if its there first time using the program
+   public void createUser(Scanner sc)
    {
         String name;
         int age;
@@ -71,12 +81,18 @@ public class StudentAlumni
         name = sc.nextLine();
         
         System.out.print("Enter age : ");
-        while(true)
+        while(true)         //Input validation 
         {
             if(sc.hasNextInt())
             {
                 age = sc.nextInt();
                 sc.nextLine();
+                if(age <= 0)
+                {
+                    System.out.println("Age cannot be less than or equal to 0");
+                    System.out.print("Enter your age : ");
+                    continue;
+                }
                 break;
             }
             else
@@ -89,14 +105,14 @@ public class StudentAlumni
         
         boolean value = true;
         phoneNo = "null";
-        while(value)
+        while(value)        //Validatin phone number 
         {
             System.out.print("Enter phone number : ");
             phoneNo = sc.nextLine();
             
-            if(phoneNo.length() == 10)
+            if(phoneNo.length() == 10)  //phone number should be 10 digits
             {
-                if(phoneNo.charAt(0) != '0')
+                if(phoneNo.charAt(0) != '0')        //should not have first digit 0
                 {
                     for(int i=0;i<phoneNo.length()-1;i++)
                     {
@@ -104,7 +120,7 @@ public class StudentAlumni
                         if(phoneNo.charAt(i+1) >= 48 && phoneNo.charAt(i+1) < 58)
                             value = false;
                     }
-                    if(value == true)
+                    if(value == true)   //have a char between digits in phone number
                         System.out.println("Error, phone number should only contain digits");
                 }
                 else{
@@ -124,15 +140,15 @@ public class StudentAlumni
         System.out.print("Tell about yourself : ");
         about = sc.nextLine();
         
-        Resume resume = new Resume(userId, name , age, phoneNo, skills, about);
-        userData.addResume(resume);
+        userData.addResume(new Resume(userId, name , age, phoneNo, skills, about));     //Adding resume into dataStore
    }
    
-   public static void applyJobs(Scanner sc, HashMap<String, ArrayList<Job>> jobData)
+   //Method that helps to apply for jobs
+   public void applyJobs(Scanner sc, HashMap<String, ArrayList<Job>> jobData)
    {
         System.out.print("\nEnter Job number(enter -1 if none) : ");
         int choice;
-        while(true)
+        while(true)     //input validation
         {
             if(sc.hasNextInt())
             {
@@ -147,25 +163,25 @@ public class StudentAlumni
             }
         }
         
-        if(choice == -1)
+        if(choice == -1)        //If user don't want to select any job
         {
             return;
         }
         
-        int k=1;
+        int k=1;        //Variable that increase as we read jobs in datastore
        for(int j=1;j<=jobData.size();j++){
-           ArrayList<Job> jobs = jobData.get("RE"+j);
+           ArrayList<Job> jobs = jobData.get("RE"+j);   //Get jobs of recruiter 
            
            for(int i=0;i<jobs.size();i++)
            {
-               if(k == choice)
+               if(k == choice)      //If the job is allign with the choice job of user
                {
-                   Resume resume = userData.getResume(userId);
+                   Resume resume = userData.getResume(userId);      //get the resume
                    
-                   if(!resume.containJob(jobs.get(i)))
+                   if(!resume.containJob(jobs.get(i)))      //check if job is already applied or not
                    {
-                       resume.addJob(jobs.get(i));
-                       jobs.get(i).addApplicants(resume);
+                       resume.addJob(jobs.get(i));          //Add job to resume appliedJob store
+                       jobs.get(i).addApplicants(resume);       //Add resume to job applicantData store
                        
                        System.out.println("<--Request sent successfully-->");
                        return;
@@ -178,13 +194,16 @@ public class StudentAlumni
                k++;
            }
         }
+        //Will reach to this line if there is no job of specified choice
         System.out.println("No job of given number\n");
     }
    
-   public static void displayJobs(Scanner sc)
+    //Method that displays the jobs with increasing order of recruiter and jobs
+   public void displayJobs(Scanner sc)
    {
-       HashMap<String, ArrayList<Job>> jobData = RecruiterDataStore.allJobs();
+       HashMap<String, ArrayList<Job>> jobData = RecruiterDataStore.allJobs();      //Get the job data form RecruiterDataStore
        
+       //If there is no jobs in DataStore
        if(jobData.size() == 0)
        {
            System.out.println("\n<--Sorry, there is no jobs right now-->");
@@ -193,32 +212,37 @@ public class StudentAlumni
        System.out.println("<----Jobs---->");
        int k=1;
        for(int j=1;j<=jobData.size();j++){
-           ArrayList<Job> jobs = jobData.get("RE"+j);
+           ArrayList<Job> jobs = jobData.get("RE"+j);       //Get the jobs according to recruiter id
            
+           //Prints the job
            for(int i=0;i<jobs.size();i++)
            {
                System.out.println((k++)+". " + jobs.get(i));
            }
         }
        
+        //call applyJobs to select the jobs and apply
         applyJobs(sc, jobData);
    }
    
-   public static boolean displayAppliedJobs()
+   //Method that displays the Applied jobs by student/alumni
+   public boolean displayAppliedJobs()
    {
-       ArrayList<Job> appliedJobs = userData.getResume(userId).getJobs();
-       ArrayList<Job> gotJobOffer = userData.getResume(userId).getGotJobOffer();
+       ArrayList<Job> appliedJobs = userData.getResume(userId).getJobs();   //Get all the jobs from the resume appliedJobs dataStore
+       ArrayList<Job> gotJobOffer = userData.getResume(userId).getGotJobOffer();        //Get the jobs which in which the user has been selected
        
+       //If there is  no jobs applied
        if(appliedJobs.size() == 0)
         {
             return false;
         }
        
        System.out.println("");
+       //Display the applied jobs
        for(int i=0;i<appliedJobs.size();i++)
        {
            System.out.println((i+1)+". " + appliedJobs.get(i));
-           if( gotJobOffer.contains(appliedJobs.get(i)))
+           if( gotJobOffer.contains(appliedJobs.get(i)))    //Checks if the appliedJob is in gotJobOffer means the user has been selected or not
            {
                System.out.println("   Got Job Offer : Yes");
            }

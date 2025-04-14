@@ -2,10 +2,10 @@
 comment0.target=RecruiterDataStore
 comment1.params=recruiterId
 comment1.target=void\ addRecruiter(java.lang.String)
-comment2.params=recruiterId\ job
-comment2.target=void\ addJob(java.lang.String,\ Job)
-comment3.params=recruiterId
-comment3.target=boolean\ containsRecruiter(java.lang.String)
+comment2.params=recruiterId
+comment2.target=boolean\ containsRecruiter(java.lang.String)
+comment3.params=recruiterId\ job
+comment3.target=void\ addJob(java.lang.String,\ Job)
 comment4.params=
 comment4.target=java.util.HashMap\ allJobs()
 comment5.params=recruiterId

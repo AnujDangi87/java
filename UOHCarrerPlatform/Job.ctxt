@@ -16,4 +16,6 @@ comment7.params=
 comment7.target=java.util.ArrayList\ getSelectedApplicants()
 comment8.params=resume
 comment8.target=boolean\ containSelectedApplicants(Resume)
-numComments=9
+comment9.params=
+comment9.target=int\ getApplicantsSize()
+numComments=10

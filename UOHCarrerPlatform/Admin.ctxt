@@ -1,3 +1,15 @@
 #BlueJ class context
 comment0.target=Admin
-numComments=1
+comment1.params=password
+comment1.target=Admin(java.lang.String)
+comment2.params=sc
+comment2.target=void\ useAdmin(java.util.Scanner)
+comment3.params=
+comment3.target=void\ adminMenu()
+comment4.params=sc
+comment4.target=void\ addEvent(java.util.Scanner)
+comment5.params=sc
+comment5.target=void\ manageListing(java.util.Scanner)
+comment6.params=
+comment6.target=boolean\ showEvents()
+numComments=7

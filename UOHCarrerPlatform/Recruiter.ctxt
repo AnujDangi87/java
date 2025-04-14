@@ -1,13 +1,15 @@
 #BlueJ class context
 comment0.target=Recruiter
 comment1.params=
-comment1.target=void\ recruiterMenu()
-comment2.params=sc
-comment2.target=void\ useRecruiter(java.util.Scanner)
-comment3.params=sc\ recruiterId
-comment3.target=Job\ addJob(java.util.Scanner,\ java.lang.String)
+comment1.target=Recruiter()
+comment2.params=
+comment2.target=void\ recruiterMenu()
+comment3.params=sc
+comment3.target=void\ useRecruiter(java.util.Scanner)
 comment4.params=sc\ recruiterId
-comment4.target=void\ selectJob(java.util.Scanner,\ java.lang.String)
-comment5.params=recruiterId
-comment5.target=boolean\ displayJobs(java.lang.String)
-numComments=6
+comment4.target=Job\ addJob(java.util.Scanner,\ java.lang.String)
+comment5.params=sc\ recruiterId
+comment5.target=void\ selectJob(java.util.Scanner,\ java.lang.String)
+comment6.params=
+comment6.target=boolean\ displayJobs()
+numComments=7
