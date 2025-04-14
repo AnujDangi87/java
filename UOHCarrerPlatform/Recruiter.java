@@ -2,13 +2,8 @@ import java.util.*;
 
 public class Recruiter
 {
-    static RecruiterDataStore recruiterData;
-    
-   public Recruiter()
-   {
-       recruiterData = new RecruiterDataStore();
-   }
-   
+   static RecruiterDataStore recruiterData = new RecruiterDataStore();
+
    public static void recruiterMenu()
    {
        System.out.println("\n1.Add new job");
@@ -95,6 +90,11 @@ public class Recruiter
             {
                 positionAvailable = sc.nextInt();
                 sc.nextLine();
+                if(positionAvailable <= 0)
+                {
+                    System.out.println("Error, position available can't be negative or zero Try agian");
+                    continue;
+                }
                 break;
             }
             else
@@ -157,7 +157,14 @@ public class Recruiter
                    }
                    
                    System.out.println("");
-                   for(int i=0;i<job.getPositionAvailable();i++)
+                   
+                   int size = job.selectedApplicants.size();
+                   if(size == job.getPositionAvailable())
+                   {
+                       System.out.println("All position are already selected can't select anymore");
+                       return;
+                   }
+                   for(int i=size;i<job.getPositionAvailable();i++)
                    {
                        System.out.print("Enter "+(i+1) +"st Applicant number(enter -1 if none) : ");
                        int resumeChoice = sc.nextInt();
@@ -166,9 +173,16 @@ public class Recruiter
                        {
                            break;
                        }
-                       job.addSelectedApplicants(applicants.get(resumeChoice-1));
-                       applicants.get(resumeChoice-1).addGotJobOffer(job);
                        
+                       if(!job.containSelectedApplicants(applicants.get(resumeChoice-1)))
+                       {
+                           job.addSelectedApplicants(applicants.get(resumeChoice-1));
+                           applicants.get(resumeChoice-1).addGotJobOffer(job);
+                       }
+                       else{
+                           System.out.println("--Applicant already selected, select another one--");
+                           i--;
+                        }
                    }
             }
             }catch(IndexOutOfBoundsException e)

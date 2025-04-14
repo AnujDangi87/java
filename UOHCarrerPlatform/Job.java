@@ -55,4 +55,10 @@ public class Job
     {
         return selectedApplicants;
     }
+    
+    public boolean containSelectedApplicants(Resume resume)
+    {
+        if(selectedApplicants.contains(resume)) return true;
+        else return false;
+    }
 }

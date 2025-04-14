@@ -16,4 +16,6 @@ comment7.params=job
 comment7.target=void\ addGotJobOffer(Job)
 comment8.params=
 comment8.target=java.util.ArrayList\ getGotJobOffer()
-numComments=9
+comment9.params=job
+comment9.target=boolean\ containJob(Job)
+numComments=10

@@ -61,4 +61,9 @@ public class Resume
     {
         return gotJobOffer;
     }
+    
+    public boolean containJob(Job job)
+    {
+        return jobs.contains(job);
+    }
 }

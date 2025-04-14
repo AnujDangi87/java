@@ -2,6 +2,7 @@ import java.util.*;
 
 public class UOHCarrerPlatform
 {
+    //Main menu for menu driven
     public static void mainMenu()
     {
         System.out.println("------You Are?------");
@@ -12,18 +13,20 @@ public class UOHCarrerPlatform
         System.out.print("Enter your choice : ");
     }
     
+    //Method that check the useability of CarrerPlatform
     public static void useCarrerPlatform()
     {
         int choice = 0;
-        Scanner sc = new Scanner(System.in);
-        StudentAlumni applicant = new StudentAlumni();
-        Recruiter recruiter = new Recruiter();
+        Scanner sc = new Scanner(System.in);        //Scanner Class Object for reading
+        StudentAlumni applicant = new StudentAlumni();          //StudentAlumni class object to perfom student/alumni related tasks
+        Recruiter recruiter = new Recruiter();      //Recruiter class object to perform Recruiter related tasks
         
+        //loop to keep switching between student/alumni, recruiter, admin using user menu driven
         while(choice != 4)
         {
-            mainMenu();
+            mainMenu();     //displaying main menu
             
-            try
+            try     //Input validation for choice int variable
             {
                 choice = sc.nextInt();
             }
@@ -31,15 +34,15 @@ public class UOHCarrerPlatform
             {
                 choice = 0;
             }
-            sc.nextLine();
+            sc.nextLine();      //Eating nextLine char in Buffer
             
             switch(choice)
             {
-                case 1: applicant.useStudentAlumni(sc);
+                case 1: applicant.useStudentAlumni(sc);         //For student/alumni
                         break;
-                case 2: recruiter.useRecruiter(sc);
+                case 2: recruiter.useRecruiter(sc);             //For Recruiter
                         break;
-                case 3:
+                case 3:                         //For Alumni
                         break;
                 case 4: System.out.println("Exiting the program....");
                         break;
@@ -56,6 +59,7 @@ public class UOHCarrerPlatform
     
     public static void main(String[] args)
     {
+        //Run useCarrerPlatform to use UOHCarrerPlatform
         useCarrerPlatform();
     }
 }

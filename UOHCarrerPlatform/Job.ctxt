@@ -14,4 +14,6 @@ comment6.params=resume
 comment6.target=void\ addSelectedApplicants(Resume)
 comment7.params=
 comment7.target=java.util.ArrayList\ getSelectedApplicants()
-numComments=8
+comment8.params=resume
+comment8.target=boolean\ containSelectedApplicants(Resume)
+numComments=9

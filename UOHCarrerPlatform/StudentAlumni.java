@@ -162,15 +162,23 @@ public class StudentAlumni
                {
                    Resume resume = userData.getResume(userId);
                    
-                   resume.addJob(jobs.get(i));
-                   jobs.get(i).addApplicants(resume);
-                   
-                   System.out.println("<--Request sent successfully-->");
-                   return;
+                   if(!resume.containJob(jobs.get(i)))
+                   {
+                       resume.addJob(jobs.get(i));
+                       jobs.get(i).addApplicants(resume);
+                       
+                       System.out.println("<--Request sent successfully-->");
+                       return;
+                   }
+                   else {
+                       System.out.println("--Request already sent--");
+                       return;
+                    }
                }
                k++;
            }
         }
+        System.out.println("No job of given number\n");
     }
    
    public static void displayJobs(Scanner sc)
@@ -182,6 +190,7 @@ public class StudentAlumni
            System.out.println("\n<--Sorry, there is no jobs right now-->");
            return;
        }
+       System.out.println("<----Jobs---->");
        int k=1;
        for(int j=1;j<=jobData.size();j++){
            ArrayList<Job> jobs = jobData.get("RE"+j);
