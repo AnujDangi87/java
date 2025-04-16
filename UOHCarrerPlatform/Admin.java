@@ -2,23 +2,27 @@ import java.util.*;
 
 public class Admin extends User
 {
-    private ArrayList<Event> eventDataStore = new ArrayList<Event>();
+    //Inheriting User which has userName and password instance variable
+    private ArrayList<Event> eventDataStore = new ArrayList<Event>();   //ArrayList varibale to hold event
     
+    //Constructor that calls super method to setup userName, password
     public Admin(String password)
     {
         super("admin", password);
     }
     
+    //To check useability of Admin Class
     public void useAdmin(Scanner sc)
     {
+        //Taking password for verification
        System.out.print("\nPlease enter admin password(enter -1 to go back) : ");
        String checkPassword = sc.nextLine();
        
-       while(true)
+       while(true)      //Input validation
        {
-           if(checkPassword.equals("-1"))
+           if(checkPassword.equals("-1"))       //Return if user enters -1
                return;
-           if(validateUser(checkPassword))
+           if(validateUser(checkPassword))      //If entered password is same as userPassword then exit loop and execute next steps else start loop agian
            {
                break;
            }
@@ -36,7 +40,7 @@ public class Admin extends User
        int choice = 0;
        while(choice != 3)
        {
-           //Displaying userMenu
+           //Displaying Admin menu
            adminMenu();
            try          //Input vaidation
             {
@@ -62,6 +66,7 @@ public class Admin extends User
        }
     }
     
+    //Display menu driven for admin
     public void adminMenu()
     {
         System.out.println("\n1.Add event");
@@ -70,8 +75,10 @@ public class Admin extends User
         System.out.print("Enter your Choice : ");
     }
     
+    //Method that adds events
     public void addEvent(Scanner sc)
     {
+        //Taking input for event instance variable
         String title;
         String date;
         
@@ -82,13 +89,17 @@ public class Admin extends User
         date = sc.nextLine();
         
         System.out.print("About event : ");
+        //Adding event into eventDataStore
         eventDataStore.add(new Event(title, date, sc.nextLine()));
     }
     
+    //Method that manages events
     public void manageListing(Scanner sc)
     {
+        //If there are events then show them else do nothing
         if(showEvents())
         {
+            //Taking eventNo to delete it
             System.out.print("Enter Event number(-1 for none) : ");
             int eventNo;
             while(true)         //Input validation 
@@ -111,6 +122,7 @@ public class Admin extends User
                 }
             }
             
+            //Exception handling if given eventNo-1 is not in arrayList indexes
             try{
                 eventDataStore.remove(eventNo-1);
                 System.out.println("<--Event removed-->");
@@ -122,6 +134,7 @@ public class Admin extends User
         }
     }
     
+    //Method that prints events and if there is event then return true else false
     public boolean showEvents()
     {
         if(eventDataStore.size() == 0)
