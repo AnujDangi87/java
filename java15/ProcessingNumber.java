@@ -1,50 +1,46 @@
 import java.io.*;
-import java.util.Scanner;
-import java.util.ArrayList;
 
 public class ProcessingNumber
 {
+    //Method that take file as input and process it 
     public static void fileInput()
     {
         try
         {
+            //Using file reader for reading the file
             FileReader file = new FileReader("input1.txt");
+            //BufferReader to read more easily
             BufferedReader bf = new BufferedReader(file);
             
+            //Variables to store values of sum and total no of digits
             int num = 0;
             int count = 0;
             
             String line;
             while(true)
             {
-                line = bf.readLine();
-                if(line == null)
+                line = bf.readLine();       //Reading a whole line at a time
+                if(line == null)        //If end of line comes exit the loop
                 {
                     break;
                 }
                 
-                line = line.trim();
+                //Removing leading and trailing spaces
+                line = line.trim();                
+                //Using regular expressin to remove space and comma delimmiters
+                String[] string = line.split("[\s,\n]+");
                 
-                int digits = 0;
-                
-                String[] space = line.split(" ");
-                for(int i=0;i<space.length;i++)
+                //Converting all numbers into integers
+                for(int i=0;i<string.length;i++)
                 {
-                    String[] comma = space[i].split(",");
-                    
-                    for(int j=0;j<comma.length;j++)
-                    {
-                        try{
-                            num += Integer.parseInt(comma[j]);
-                            count++;
-                        }
-                        catch(NumberFormatException e)
-                        {
-                            //Do nothing
-                        }
-                        
+                    try{
+                        num += Integer.parseInt(string[i]);
+                        count++;
                     }
-                    
+                    catch(NumberFormatException e)
+                    {
+                        System.out.println(e);
+                    }
                 }
                 
             }
@@ -53,11 +49,11 @@ public class ProcessingNumber
             file.close();
             bf.close();
         }
-        catch(FileNotFoundException fnfe)
+        catch(FileNotFoundException fnfe)       //Exception handling if FileReader throws a exception
         {
             System.out.println("Error, file not found");
         }
-        catch(IOException ioe)
+        catch(IOException ioe)          //Exception when reading the files throws a exception
         {
             System.out.println("Error, reading file");
         }

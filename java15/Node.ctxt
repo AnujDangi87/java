@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Node
+comment1.params=data
+comment1.target=Node(int)
+comment2.params=data\ n
+comment2.target=Node(int,\ Node)
+comment3.params=pos\ currPos\ newData
+comment3.target=boolean\ insertAfter(int,\ int,\ int)
+comment4.params=currentMax
+comment4.target=int\ getMax(int)
+comment5.params=currLength
+comment5.target=int\ getLength(int)
+comment6.params=pos\ currPos
+comment6.target=boolean\ deleteNode(int,\ int)
+comment7.params=
+comment7.target=void\ display()
+numComments=8

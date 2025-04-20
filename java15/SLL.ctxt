@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=SLL
+comment1.params=
+comment1.target=SLL()
+comment2.params=position\ data
+comment2.target=void\ insertAfter(int,\ int)
+comment3.params=
+comment3.target=int\ Max()
+comment4.params=
+comment4.target=int\ length()
+comment5.params=position
+comment5.target=void\ deleteNode(int)
+comment6.params=
+comment6.target=void\ displayList()
+numComments=7
