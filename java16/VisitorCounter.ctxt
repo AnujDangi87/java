@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=VisitorCounter
+comment1.params=
+comment1.target=VisitorCounter()
+comment2.params=visitor
+comment2.target=void\ addVisitor(Visitor)
+comment3.params=
+comment3.target=int\ countUniqueVisitors()
+comment4.params=
+comment4.target=void\ displayUniqueVisitors()
+numComments=5

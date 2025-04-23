@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Visitor
+comment1.params=name\ ipAddress
+comment1.target=Visitor(java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getName()
+comment3.params=
+comment3.target=java.lang.String\ getIpAddress()
+comment4.params=obj
+comment4.target=boolean\ equals(java.lang.Object)
+comment5.params=
+comment5.target=int\ hashCode()
+comment6.params=
+comment6.target=java.lang.String\ toString()
+numComments=7
