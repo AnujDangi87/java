@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class UseVisitorCounter
 {
+    //MainMenu method
     public static void mainMenu()
     {
         System.out.println("\n1. Add visitor");
@@ -11,6 +12,7 @@ public class UseVisitorCounter
         System.out.print("Enter your choice : ");
     }
     
+    //Method to check useability of VisitorCounter
     public static void useVisitorCounter()
     {
         int choice = 0;

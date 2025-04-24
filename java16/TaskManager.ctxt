@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=TaskManager
+comment1.params=
+comment1.target=TaskManager()
+comment2.params=f\ s
+comment2.target=int\ compare(Task,\ Task)
+comment3.params=task
+comment3.target=void\ addTask(Task)
+comment4.params=
+comment4.target=Task\ getHighestPriorityTask()
+comment5.params=
+comment5.target=void\ viewTasks()
+numComments=6

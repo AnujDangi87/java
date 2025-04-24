@@ -1,15 +1,17 @@
 import java.util.HashSet;
-import java.util.Iterator;
 
 public class VisitorCounter
 {
+    //Instance variable
     HashSet<Visitor> visitors;
     
+    //Constructor
     public VisitorCounter()
     {
         visitors = new HashSet<Visitor>();
     }
     
+    //Adding visitor if not there
     public void addVisitor(Visitor visitor)
     {
         if(visitor == null)
@@ -20,11 +22,13 @@ public class VisitorCounter
         }
     }
     
+    //returns count of objects in visitors in HashSet
     public int countUniqueVisitors()
     {
         return visitors.size();
     }
     
+    //Displays visitors in HashSet
     public void displayUniqueVisitors()
     {
         System.out.println(visitors);

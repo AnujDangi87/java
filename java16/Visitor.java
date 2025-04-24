@@ -1,24 +1,41 @@
 public class Visitor
 {
+    //Instance variables 
     private String name;
     private String ipAddress;
     
+    //Constructor
     public Visitor(String name, String ipAddress)
     {
         this.name = name;
         this.ipAddress = ipAddress;
     }
     
+    //Getter for name
     public String getName()
     {
         return name;
     }
     
+    //Getter for ipAddress
     public String getIpAddress()
     {
         return ipAddress;
     }
     
+    //Setter for name
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+    
+    //Setter for ipAddress
+    public void setIpAddress(String ipAddress)
+    {
+        this.ipAddress = ipAddress;
+    }
+    
+    //Equals method reutrn true if ipaddress is same as current object
     @Override
     public boolean equals(Object obj)
     {
@@ -37,6 +54,7 @@ public class Visitor
         return this.ipAddress.equals(other.ipAddress);
     }
     
+    //HashCode method that returns same hashcode for same ipaddress objects
     @Override
     public int hashCode()
     {
@@ -57,6 +75,7 @@ public class Visitor
            return ipAddress.hashCode();*/
     }
     
+    //toString method that defines a visitor
     @Override
     public String toString()
     {

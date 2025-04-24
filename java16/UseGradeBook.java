@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 public class UseGradeBook
 {
+    //Main menu method 
     public static void mainMenu()
     {
         System.out.println("1. Add grades to a Student");
@@ -13,6 +14,7 @@ public class UseGradeBook
         System.out.print("Enter your choice : ");
     }
     
+    //Method that check useability of GradeBook class
     public static void useGradeBook()
     {
         int choice = 0;
