@@ -14,7 +14,7 @@ public class ArmstrongChecker {
         armCopy = arm;
         while (arm>0)
         {
-            output = (int)(output + Math.pow(arm%10, pow));             //Adding the digit power of each digit of input into output.
+            output = (output + (int)Math.pow(arm%10, pow));             //Adding the digit power of each digit of input into output.
             arm /= 10;
         }
         if (output == armCopy)

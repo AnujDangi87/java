@@ -4,33 +4,16 @@ class ArrayRotation
 {
     static void arrRot(int arr[], int k, int n)
     {
-        int tempEle = arr[n-1];
-        int temp;               //Temp variable to store temp values.
-
-        for (int i=0;i<k;i++)           //substituting values after k indices.
+        int[] outputArr = new  int[arr.length];
+        for(int i=0;i<n;i++)
         {
-            temp = arr[i];
-            arr[i] = arr[i+k];
-            if ( n%2 != 0)
-            {
-                
-                arr[n-1-i] = temp;
-            }
-            else
-            {
-                arr[n-k+i] = temp;
-            }
-            
-        }
-        if (n%2 != 0)
-        {
-            arr[n/2] = tempEle;
+            outputArr[i] = arr[(k+i)%n];
         }
 
         System.out.print("Rotated Elements are : ");
         for (int i=0;i<n;i++)
         {
-            System.out.print(arr[i]+" ");
+            System.out.print(outputArr[i]+" ");
         }
     }
     public static void main(String[] args)
