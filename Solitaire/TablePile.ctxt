@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=TablePile
+comment1.params=x\ y\ c
+comment1.target=TablePile(int,\ int,\ int)
+comment2.params=tx\ ty
+comment2.target=void\ select(int,\ int)
+comment3.params=aCard
+comment3.target=boolean\ canTake(Card)
+comment4.params=tx\ ty
+comment4.target=boolean\ includes(int,\ int)
+comment5.params=g
+comment5.target=void\ display(java.awt.Graphics)
+numComments=6

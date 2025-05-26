@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=UseGraph
+comment1.params=
+comment1.target=void\ menu()
+comment2.params=
+comment2.target=void\ graphMenu()
+comment3.params=
+comment3.target=void\ useGraph()
+comment4.params=graph\ sc
+comment4.target=void\ graph(GraphAM,\ java.util.Scanner)
+comment5.params=args
+comment5.target=void\ main(java.lang.String[])
+numComments=6

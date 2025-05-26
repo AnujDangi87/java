@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=GraphAM
+comment1.params=noV
+comment1.target=GraphAM(int)
+comment2.params=aM
+comment2.target=GraphAM(int[][])
+comment3.params=filename
+comment3.target=GraphAM(java.lang.String)
+comment4.params=
+comment4.target=boolean\ isNullGraph()
+comment5.params=v
+comment5.target=int\ getDegree(int)
+comment6.params=other
+comment6.target=GraphAM\ unionWith(GraphAM)
+comment7.params=
+comment7.target=void\ display()
+numComments=8

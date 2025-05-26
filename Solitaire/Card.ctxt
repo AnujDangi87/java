@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Card
+comment1.params=sv\ rv
+comment1.target=Card(int,\ int)
+comment2.params=
+comment2.target=void\ flip()
+comment3.params=
+comment3.target=int\ rank()
+comment4.params=
+comment4.target=int\ suit()
+comment5.params=
+comment5.target=boolean\ faceUp()
+comment6.params=
+comment6.target=java.awt.Color\ color()
+comment7.params=g\ x\ y
+comment7.target=void\ draw(java.awt.Graphics,\ int,\ int)
+numComments=8

@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=SuitPile
+comment1.params=x\ y
+comment1.target=SuitPile(int,\ int)
+comment2.params=aCard
+comment2.target=boolean\ canTake(Card)
+numComments=3
